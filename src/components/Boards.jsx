@@ -1,10 +1,15 @@
 import React from 'react';
 import Square from './Square';
 
-const Boards = ({ board, squareClickHandler }) => {
+const Boards = ({ board, squareClickHandler, winningSquare }) => {
   const renderSquare = pos => {
+    const isWinningSquare = winningSquare.includes(pos);
     return (
-      <Square value={board[pos]} onClick={() => squareClickHandler(pos)} />
+      <Square
+        value={board[pos]}
+        onClick={() => squareClickHandler(pos)}
+        isWinningSquare={isWinningSquare}
+      />
     );
   };
 

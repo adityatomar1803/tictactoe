@@ -55,7 +55,9 @@ const App = () => {
     <div className="app">
       {/* react expects a single element. This whole code is inside component knows as Fragments, thats why there 
       is no error. */}
-      <h1>TIC TAC TOE</h1>
+      <h1>
+        TIC <span className="text-green">TAC</span> TOE
+      </h1>
       <StatusMessage winner={winner} current={current} />
       {/* <h2>{message}</h2> */}
       <Boards
@@ -63,8 +65,15 @@ const App = () => {
         squareClickHandler={squareClickHandler}
         winningSquare={winningSquare}
       />
-      <button onClick={onNewGame}>Start New Game</button>
+      <button
+        onClick={onNewGame}
+        className={`btn-reset ${winner ? 'active' : ' '}`}
+      >
+        Start New Game
+      </button>
+      <h2 style={{ fontWeight: 'normal' }}>Current Game History</h2>
       <History history={history} moveTo={moveTo} currentMove={currentMove} />
+      <div className="bg-balls" />
     </div>
   );
 };

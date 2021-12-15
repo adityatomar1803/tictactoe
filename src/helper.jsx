@@ -14,14 +14,14 @@ export function calculateWinner(square) {
     if (square[a] && square[a] === square[b] && square[a] === square[c]) {
       // return square[a];
       return {
-        winning: square[a],
+        winner: square[a],
         winningSquare: [a, b, c],
       };
     }
   }
 
   return {
-    winning: null,
+    winner: null,
     winningSquare: [],
   };
 }
